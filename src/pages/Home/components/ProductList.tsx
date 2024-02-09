@@ -15,15 +15,18 @@ export const ProductList = ({ items }: CardProp) => {
   const numberFormat = new Intl.NumberFormat("en-US", options)
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8  ">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex mt-[56px]">
-        <div className="w-[240px] h-[326px]">
-          <p className="text-[24px] leading-[32px] text-[#333333]">
-            {items && items.title}
-          </p>
-          <p className="mt-[8px] text-[12px] text-grayTextColor font-[400px]">
-            {items && items.subtitle}
-          </p>
+        <div className="flex flex-col w-[240px] h-[326px] justify-between">
+          <div className="">
+            <p className="text-[24px] leading-[32px] text-[#333333]">
+              {items && items.title}
+            </p>
+            <p className="mt-[8px] text-[12px] text-grayTextColor font-[400px]">
+              {items && items.subtitle}
+            </p>
+          </div>
+          <SwiperCustomNavButtons />
         </div>
 
         <Swiper
@@ -128,7 +131,7 @@ export const SwiperCustomNavButtons = () => {
           />
         </svg>
       </button>
-      <button>
+      <button onClick={() => swiper.slideNext()}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

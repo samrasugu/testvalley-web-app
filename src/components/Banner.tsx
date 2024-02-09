@@ -22,7 +22,10 @@ export default function Banner() {
       freeMode={true}
       centerInsufficientSlides
       setWrapperSize={true}
-      style={{ width: "100%", objectFit: "fill"}}
+      centeredSlidesBounds={true}
+      centeredSlides={true}
+      cssMode={true}
+      style={{ width: "100%", objectFit: "cover"}}
       pagination={{
         clickable: true,
       }}
@@ -31,7 +34,7 @@ export default function Banner() {
         disableOnInteraction: false,
       }}
       modules={[Autoplay, FreeMode, Pagination]}
-      className="h-[323px] mySwiper"
+      className="h-[323px] mySwiper w-full object-cover"
     >
       {banner.map(banner => {
         return (
@@ -39,7 +42,7 @@ export default function Banner() {
             <img
               src={banner.pcImageUrl}
               alt={banner.title}
-              className="h-full object-contain w-full"
+              className="h-full object-cover w-full"
               style={{ objectFit: "contain" }}
             />
           </SwiperSlide>
